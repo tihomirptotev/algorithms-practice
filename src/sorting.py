@@ -12,3 +12,16 @@ def bubble_sort(input_array: Sequence) -> List:
                 arr[i], arr[i + 1] = arr[i + 1], arr[i]
 
     return arr
+
+
+def insertion_sort(input_array: Sequence) -> List:
+    arr = list(input_array)
+
+    for i in range(1, len(arr)):
+        current = arr.pop(i)
+        counter = 0
+        while arr[i] > arr[counter] and counter < i:
+            counter += 1
+        arr.insert(counter, current)
+
+    return arr
